@@ -16,4 +16,7 @@ test('GET /health returns healthy', async () => {
   const res = await request(app).get('/health');
   expect(res.statusCode).toBe(200);
   expect(res.body.status).toBe('healthy');
+  expect(res.body).toHaveProperty('uptime');
+  expect(res.body).toHaveProperty('timestamp');
+  expect(res.body).toHaveProperty('environment');
 });

@@ -179,7 +179,13 @@ app.get('/api', (req, res) => {
 });
 
 app.get('/health', (req, res) => {
-  res.json({ status: 'healthy' });
+  res.json({
+    status: 'healthy',
+    uptime: Math.floor(process.uptime()),
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || 'development',
+    version: '1.0.0'
+  });
 });
 
 if (require.main === module) {

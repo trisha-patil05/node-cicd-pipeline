@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "test": "jest --forceExit",
-    "test:coverage": "jest --coverage --forceExit"
+    "test:coverage": "jest --coverage --forceExit",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "express": "^5.2.1"
   },
   "devDependencies": {
+    "eslint": "^10.5.0",
     "jest": "^30.3.0",
     "supertest": "^7.2.2"
   }
